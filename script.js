@@ -1,27 +1,20 @@
-var time = new Date().getHours();
-var lolcat = document.getElementById('lolcat');
-// defining your default image
-var image = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/08/wakeUpTime.jpg";
-var messageText;
 var noon = 12;
 var evening = 18; // 6PM
 var wakeupTime = 9; // 9AM
 var lunchTime = 12; // 12PM
 var partyTime = 17; // 5PM
 var napTime = lunchTime + 2; // 2PM
+
 var time = new Date().getHours();
  
-var updateClock = function() 
-{
- 
-// the rest of the LOLCat code you wrote up until this step
- 
-showCurrentTime();
- 
-};
+var updateClock = function() {
 
-
+ 
+var lolcat = document.getElementById('lolcat');
 var message = document.getElementById('timeEvent');
+var messageText;
+var image = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/08/wakeUpTime.jpg";
+ 
 if (time == partyTime)
 {
    image = "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/08/partyTime.jpg";
@@ -48,10 +41,13 @@ else if (time > evening) {
 } else {
     messageText = "Good afternoon!";
 }
+
 message.innerText = messageText;
-// this should come right after `message.innerText = messageText;`
 lolcat.src = image;
 
+showCurrentTime();
+
+};
 
 var showCurrentTime = function()
 {
@@ -59,7 +55,6 @@ var showCurrentTime = function()
     var clock = document.getElementById('clock');
  
     var currentTime = new Date();
- 
     var hours = currentTime.getHours();
     var minutes = currentTime.getMinutes();
     var seconds = currentTime.getSeconds();
@@ -92,7 +87,7 @@ var showCurrentTime = function()
  
     clock.innerText = clockTime;
 };
-showCurrentTime();
+
 updateClock(); 
     
 var oneSecond = 1000; 
