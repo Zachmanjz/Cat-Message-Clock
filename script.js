@@ -9,6 +9,18 @@ var wakeupTime = 9; // 9AM
 var lunchTime = 12; // 12PM
 var partyTime = 17; // 5PM
 var napTime = lunchTime + 2; // 2PM
+var time = new Date().getHours();
+ 
+var updateClock = function() 
+{
+ 
+// the rest of the LOLCat code you wrote up until this step
+ 
+showCurrentTime();
+ 
+};
+
+
 var message = document.getElementById('timeEvent');
 if (time == partyTime)
 {
@@ -80,4 +92,8 @@ var showCurrentTime = function()
  
     clock.innerText = clockTime;
 };
-showCurrentTime(); 
+showCurrentTime();
+updateClock(); 
+    
+var oneSecond = 1000; 
+setInterval( updateClock, oneSecond);
